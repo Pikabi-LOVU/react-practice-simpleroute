@@ -1,28 +1,33 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            Home
-          </li>
-          <li>
-            MyPage
-          </li>
-          <li>
-            Dashboard
-          </li>
-        </ul>
-      </nav>
-    </div>
-   </BrowserRouter>
-)
+      <div>
+        <nav>
+          <ul className="ul">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/mypage">MyPage</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 // Home 컴포넌트
